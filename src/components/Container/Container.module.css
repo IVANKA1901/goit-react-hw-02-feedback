@@ -1,8 +1,8 @@
 .container {
-  max-width: 500px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding: 40px;
-  background-color: #ffff;
+  padding: 50px;
+  background-color: #eaeaea;
 }

@@ -9,6 +9,10 @@ export class FeedbackOptions extends Component {
     onLeaveFeedback: PropTypes.func.isRequired,
   };
 
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   render() {
     const { options, onLeaveFeedback } = this.props;
 
@@ -17,6 +21,7 @@ export class FeedbackOptions extends Component {
         {options.map(option => (
           <ButtonItem
             key={option}
+            text={this.capitalizeFirstLetter(option)}
             name={option}
             onLeaveFeedback={onLeaveFeedback}
           />

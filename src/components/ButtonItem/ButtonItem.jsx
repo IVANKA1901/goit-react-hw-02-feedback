@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import css from './ButtonItem.module.css';
+
 export class ButtonItem extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -12,7 +13,7 @@ export class ButtonItem extends Component {
     return (
       <li>
         <button
-          className={css.button}
+          className={css.btn}
           name={this.props.name}
           onClick={this.props.onLeaveFeedback}
         >

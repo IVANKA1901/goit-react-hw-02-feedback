@@ -3,6 +3,7 @@ import { Section } from 'components/Section/Section';
 import { Statistics } from 'components/Statistics/Statistics';
 import { Notification } from '../Notification/Notification';
 import React, { Component } from 'react';
+import css from './Feedback.module.css';
 
 export class Feedback extends Component {
   state = {
@@ -10,20 +11,30 @@ export class Feedback extends Component {
     neutral: 0,
     bad: 0,
   };
+
   onLeaveFeedback = event => {
     this.setState(prevState => ({
       [event.target.name]: prevState[event.target.name] + 1,
     }));
   };
 
+  countTotalFeedback() {
+    return this.state.good + this.state.neutral + this.state.bad;
+  }
+
+  countPositiveFeedbackPercentage() {
+    return Math.ceil((this.state.good * 100) / this.countTotalFeedback());
+  }
+
   render() {
     const good = this.state.good;
     const bad = this.state.bad;
     const neutral = this.state.neutral;
-    const total = this.state.total;
-    const positivePercentage = this.state.positivePercentage;
+    const total = this.countTotalFeedback();
+    const positivePercentage = this.countPositiveFeedbackPercentage();
+
     return (
-      <div>
+      <div className={css.feedback}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
