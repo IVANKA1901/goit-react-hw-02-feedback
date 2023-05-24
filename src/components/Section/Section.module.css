@@ -1,0 +1,13 @@
+.section {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  box-shadow: 2px 2px 4px rgb(49, 52, 255);
+  border: 2px solid rgb(8, 10, 128);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 22px;
+}
