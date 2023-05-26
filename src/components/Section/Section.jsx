@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 import css from './Section.module.css';
 
 export class Section extends Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-  };
-
   render() {
     return (
       <div className={css.section}>
@@ -16,3 +12,7 @@ export class Section extends Component {
     );
   }
 }
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+};

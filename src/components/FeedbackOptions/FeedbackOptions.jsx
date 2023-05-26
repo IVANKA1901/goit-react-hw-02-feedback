@@ -4,11 +4,6 @@ import { ButtonList } from '../ButtonList/ButtonList';
 import { ButtonItem } from '../ButtonItem/ButtonItem';
 
 export class FeedbackOptions extends Component {
-  static propTypes = {
-    options: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onLeaveFeedback: PropTypes.func.isRequired,
-  };
-
   capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -30,3 +25,8 @@ export class FeedbackOptions extends Component {
     );
   }
 }
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
